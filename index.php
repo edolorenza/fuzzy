@@ -91,6 +91,7 @@
                 </div>
                 <select name="login">
                     <option value="administrator">Administrator</option>    
+                    <option value="operator">Operator</option>    
                 <div>
                   <!-- <a href="/signup.html" class="btn btn-custom1"> Sign Up </a> -->
                   <input class="btn btn-custom2" name="submit" type="submit" value="LOGIN">
