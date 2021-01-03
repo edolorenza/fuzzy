@@ -1,0 +1,56 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.page-content-signin {
+  margin-top: 120px;
+}
+
+.gambar {
+  width: 432px;
+  height: 319px;
+  border-radius: 15px;
+}
+
+.tittle {
+  font-weight: 600;
+  font-size: 30.2301px;
+  line-height: 45px;
+  color: #5ca6fc;
+}
+
+.form-control {
+  background-color: #f3f3f3;
+}
+
+.btn-custom1 {
+  background-color: #22dab9;
+  text-decoration: none;
+  color: white;
+  margin-left: 50px;
+}
+
+.btn-custom1:hover {
+  background-color: #1bb699;
+}
+
+.btn-custom2 {
+  background-color: #5ca6fc;
+  text-decoration: none;
+  margin-left: 50px;
+  color: white;
+}
+
+.btn-custom2:hover {
+  background-color: #4e89ce;
+}
+
+/* footer */
+.footer-signin {
+  margin-top: 120px;
+  background-color: #f3f3f3;
+}
+
+.footer-signin P {
+  color: #000000;
+}
