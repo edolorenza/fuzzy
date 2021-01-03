@@ -41,15 +41,15 @@ lihatdata_admin.php> <b><font color=black>Lihat Data</font></b></a></td> </tr>
 <td><b>Persediaan</b></td>
 <td><b>Produksi</b></td></tr>
 <?php
-$query=mysql_query("select * from tanggal");
-while ($result=mysql_fetch_array($query)){
+$query=mysqli_query($koneksi, "select * from tanggal");
+while ($result=mysqli_fetch_array($query)){
 $id=$result['id'];
-$query2=mysql_query("select * from permintaan where id='$id'");
-$result2=mysql_fetch_array($query2);
-$query3=mysql_query("select * from persediaan where id='$id'");
-$result3=mysql_fetch_array($query3);
-$query4=mysql_query("select * from produksi where id='$id'");
-$result4=mysql_fetch_array($query4);
+$query2=mysqli_query($koneksi, "select * from permintaan where id='$id'");
+$result2=mysqli_fetch_array($query2);
+$query3=mysqli_query($koneksi, "select * from persediaan where id='$id'");
+$result3=mysqli_fetch_array($query3);
+$query4=mysqli_query($koneksi, "select * from produksi where id='$id'");
+$result4=mysqli_fetch_array($query4);
 echo "<tr><td>$id</td>
 <td>$result[tanggal]</td>
 <td>$result2[permintaan]</td>

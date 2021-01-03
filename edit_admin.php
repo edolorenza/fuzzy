@@ -36,17 +36,22 @@ include ("header.php");
 
 <caption> <font color=#5C743D> <b> EDIT DATA <b></font></caption> <tr><td><b>id</b></td><td><b>Tanggal</b></td><td><b>Permintaan</b></td><td><b>Persediaan</b></td><td><b>Produksi</b></td></tr> <?php
 
-$query=mysql_query ("select * from tanggal");
-while ($result=mysql_fetch_array($query)){
+$query=mysqli_query ($koneksi, "select * from tanggal");
+while ($result=mysqli_fetch_array($query)){
 $id=$result['id'];
-$query2=mysql_query("select * from permintaan where id='$id'");
-$result2=mysql_fetch_array($query2);
-$query3=mysql_query("select * from persediaan where id='$id'");
-$result3=mysql_fetch_array($query3);
-$query4=mysql_query("select * from produksi where id='$id'");
-$result4=mysql_fetch_array($query4);
+
+$query1=mysqli_query($koneksi, "select * from tanggal where id='$id'");
+$result1=mysqli_fetch_array($query1);
+$query2=mysqli_query($koneksi, "select * from permintaan where id='$id'");
+$result2=mysqli_fetch_array($query2);
+$query3=mysqli_query($koneksi, "select * from persediaan where id='$id'");
+$result3=mysqli_fetch_array($query3);
+$query4=mysqli_query($koneksi, "select * from produksi where id='$id'");
+$result4=mysqli_fetch_array($query4);
 echo "<tr><td>$id</td>
-<td><a href=update_admin.php?kt=tanggal&id=$id>$result[tanggal]</a></td> <td><a href=update_admin.php?kt=permintaan&id=$id>$result2[permintaan]</a>
+<td><a href=update_admin.php?kt=tanggal&id=$id>$result1[tanggal]</a></td> 
+
+<td><a href=update_admin.php?kt=permintaan&id=$id>$result2[permintaan]</a>
 
 </td>
 <td><a href=update_admin.php?kt=persediaan&id=$id> $result3[persediaan]</a> </td>

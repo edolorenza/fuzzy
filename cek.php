@@ -3,10 +3,10 @@ session_start();
 include "koneksi.php";
 if ($_POST['login']=="administrator" )
 {
-$query=mysql_query("select * from password where user='$_POST[username]' and status='administrator'");
+$query=mysqli_query($koneksi, "select * from password where user='$_POST[username]' and status='administrator'");
 
-if (mysql_num_rows($query)!=0){
-$result=mysql_fetch_array($query);
+if (mysqli_num_rows($query)!=0){
+$result=mysqli_fetch_array($query);
 $password=$result[password];
 if ($password==$_POST['password']){
 $_SESSION['user']=$_POST['username']; header('location:admin.php?message=selamat datang!!!');
@@ -24,10 +24,10 @@ header('location:index.php?message=<b>Jika Anda Administrator atau Operator, Cek
 }
 else if ($_POST['login']=="operator" )
 {
-$query=mysql_query("select * from password where user='$_POST[username]' and status='operator'");
+$query=mysqli_query("select * from password where user='$_POST[username]' and status='operator'");
 
-if (mysql_num_rows($query)!=0) {
-$result=mysql_fetch_array($query);
+if (mysqli_num_rows($query)!=0) {
+$result=mysqli_fetch_array($query);
 $password=$result[password];
 $_SESSION['user']=$result[user];
 if ($password==$_POST['password']){ header('location:user.php?message=selamat datang!!!');

@@ -42,15 +42,18 @@ include ("header.php");
 </td><td><b>Persediaan</b></td><td><b>Produksi</b></td></tr>
 <?php
 $id_edit=$_GET['id'];
-$query=mysql_query ("select * from tanggal");
-while ($result=mysql_fetch_array($query)){
+$query=mysqli_query ($koneksi, "select * from tanggal");
+while ($result=mysqli_fetch_array($query)){
 $id=$result['id'];
-$query2=mysql_query("select * from permintaan where id='$id'");
-$result2=mysql_fetch_array($query2);
-$query3=mysql_query("select * from persediaan where id='$id'");
-$result3=mysql_fetch_array($query3);
-$query4=mysql_query("select * from produksi where id='$id'");
-$result4=mysql_fetch_array($query4);
+
+$query1=mysqli_query($koneksi,"select * from tanggal where id='$id'");
+$result1=mysqli_fetch_array($query1);
+$query2=mysqli_query($koneksi,"select * from permintaan where id='$id'");
+$result2=mysqli_fetch_array($query2);
+$query3=mysqli_query($koneksi,"select * from persediaan where id='$id'");
+$result3=mysqli_fetch_array($query3);
+$query4=mysqli_query($koneksi, "select * from produksi where id='$id'");
+$result4=mysqli_fetch_array($query4);
 ?>
 <tr>
 <td>
@@ -58,8 +61,8 @@ $result4=mysql_fetch_array($query4);
 </td>
 <td>
 <?php
-if (($_GET['kt']==tanggal) and ($id==$id_edit)){
-echo "<input name=tanggal value=$tanggal> <input name=id type=hidden value=$id>";
+if (($_GET['kt']=='tanggal') and ($id==$id_edit)){
+echo "<input name=tanggal value=$result1[tanggal]> <input name=id type=hidden value=$id>";
 
 }else {
 echo "$result[tanggal]";
@@ -68,7 +71,7 @@ echo "$result[tanggal]";
 </td>
 <td>
 <?php
-if (($_GET['kt']==permintaan) and ($id==$id_edit)){
+if (($_GET['kt']=='permintaan') and ($id==$id_edit)){
 echo "<input name=permintaan value=$result2[permintaan]><input name=id type=hidden value=$id>";
 }else {
 echo "$result2[permintaan]";
@@ -77,7 +80,7 @@ echo "$result2[permintaan]";
 </td>
 <td>
 <?php
-if (($_GET['kt']==persediaan) and ($id==$id_edit)){
+if (($_GET['kt']=='persediaan') and ($id==$id_edit)){
 echo "<input name=persediaan type=text value=$result3[persediaan]> <input name=id type=hidden value=$id>";
 
 }else {
@@ -88,7 +91,7 @@ echo "$result3[persediaan]";
 
 <td>
 <?php
-if (($_GET['kt']==produksi) and ($id==$id_edit)){
+if (($_GET['kt']=='produksi') and ($id==$id_edit)){
 echo "<input name=produksi value=$result4[produksi]> <input name=id type=hidden value=$id>";
 
 }else {

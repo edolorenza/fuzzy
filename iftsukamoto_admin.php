@@ -42,39 +42,39 @@ $masa=$_POST['masa'];
 $masa2=$masa-1;
 $hari_ke=$mulai+$masa2;
 
-$max_permintaan_temp=mysql_query("select	max(permintaan)	as	a	from
+$max_permintaan_temp=mysqli_query($koneksi, "select	max(permintaan)	as	a	from
 
 permintaan where id>=$mulai and id<=$hari_ke");
-$max_permintaan_temp2=mysql_fetch_array($max_permintaan_temp);
+$max_permintaan_temp2=mysqli_fetch_array($max_permintaan_temp);
 $max_permintaan=$max_permintaan_temp2['a'];
 
-$min_permintaan_temp=mysql_query("select min(permintaan) as a from permintaan
+$min_permintaan_temp=mysqli_query($koneksi, "select min(permintaan) as a from permintaan
 
 where id>=$mulai and id<=$hari_ke");
-$min_permintaan_temp2=mysql_fetch_array($min_permintaan_temp);
+$min_permintaan_temp2=mysqli_fetch_array($min_permintaan_temp);
 $min_permintaan=$min_permintaan_temp2['a'];
 
-$max_persediaan_temp=mysql_query("select max(persediaan) as a from persediaan
+$max_persediaan_temp=mysqli_query($koneksi, "select max(persediaan) as a from persediaan
 
 where id>=$mulai and id<=$hari_ke");
-$max_persediaan_temp2=mysql_fetch_array($max_persediaan_temp);
+$max_persediaan_temp2=mysqli_fetch_array($max_persediaan_temp);
 $max_persediaan=$max_persediaan_temp2['a'];
 
-$min_persediaan_temp=mysql_query("select min(persediaan) as a from persediaan
+$min_persediaan_temp=mysqli_query($koneksi, "select min(persediaan) as a from persediaan
 
 where id>=$mulai and id<=$hari_ke");
-$min_persediaan_temp2=mysql_fetch_array($min_persediaan_temp);
+$min_persediaan_temp2=mysqli_fetch_array($min_persediaan_temp);
 $min_persediaan=$min_persediaan_temp2['a'];
-$max_produksi_temp=mysql_query("select max(produksi) as a from produksi where
+$max_produksi_temp=mysqli_query($koneksi, "select max(produksi) as a from produksi where
 
 id>=$mulai and id<=$hari_ke");
-$max_produksi_temp2=mysql_fetch_array($max_produksi_temp);
+$max_produksi_temp2=mysqli_fetch_array($max_produksi_temp);
 $max_produksi=$max_produksi_temp2['a'];
 
-$min_produksi_temp=mysql_query("select min(produksi) as a from produksi where
+$min_produksi_temp=mysqli_query($koneksi, "select min(produksi) as a from produksi where
 
 id>=$mulai and id<=$hari_ke");
-$min_produksi_temp2=mysql_fetch_array($min_produksi_temp);
+$min_produksi_temp2=mysqli_fetch_array($min_produksi_temp);
 $min_produksi=$min_produksi_temp2['a'];
 
 $xt=($max_permintaan+$min_permintaan)/2;
