@@ -9,7 +9,7 @@ if (isset($_SESSION['user'])){
 <body bgcolor=#FFFFFF>
 <?php
 include "koneksi.php";
-include ("header.php");
+
 ?>
 <br><br><br>
 <table width=1000px height="700px" align=center cellpadding=1 cellspacing=1 border=1>

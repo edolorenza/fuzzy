@@ -3,39 +3,56 @@ session_start();
 if (isset($_SESSION['user'])){
 ?>
 <html>
+
 <head>
-<title>Administrator</title>
+    <title>Administrator</title>
 </head>
+
 <body bgcolor=white>
-<?php
+    <?php
 include "koneksi.php";
-include ("header.php");
+
 
 ?>
-<br><br><br>
+    <br><br><br>
 
-<table width=1000px height="700px" align=center cellpadding=1 cellspacing=1 border=1>
+    <table width=1000px height="700px" align=center cellpadding=1 cellspacing=1 border=1>
 
-<tr>
-<th width="199" height="100" valign="top">
-<table border=5 cellpadding=1 cellspacing=1>
+        <tr>
+            <th width="199" height="100" valign="top">
+                <table border=5 cellpadding=1 cellspacing=1>
 
-<tr valign="middle"><td width="198"  height="25" bgcolor=grey><a href=admin.php><b><font color=black>Home</font></b></a></td></tr>
+                    <tr valign="middle">
+                        <td width="198" height="25" bgcolor=grey><a href=admin.php><b>
+                                    <font color=black>Home</font>
+                                </b></a></td>
+                    </tr>
 
-<tr	valign="middle"><td	height="25"	bgcolor=grey><a
-href=olahdata_admin.php><b><font color=black>Olah Data</font></b></a></td></tr>
+                    <tr valign="middle">
+                        <td height="25" bgcolor=grey><a href=olahdata_admin.php><b>
+                                    <font color=black>Olah Data</font>
+                                </b></a></td>
+                    </tr>
 
-<tr	valign="middle"><td	height="25"	bgcolor=grey><a
-href=lihatdata_admin.php><b><font color=black>Lihat Data</font></b></a></td></tr>
+                    <tr valign="middle">
+                        <td height="25" bgcolor=grey><a href=lihatdata_admin.php><b>
+                                    <font color=black>Lihat Data</font>
+                                </b></a></td>
+                    </tr>
 
 
-<tr valign="middle"><td height="25" bgcolor=grey><a href=logout.php><b><font color=black>Logout</font></b></a></td></tr>
+                    <tr valign="middle">
+                        <td height="25" bgcolor=grey><a href=logout.php><b>
+                                    <font color=black>Logout</font>
+                                </b></a></td>
+                    </tr>
 
-</table>
-</th>
-<td width="792" rowspan="2" valign=top align="justify"><font color=black>
+                </table>
+            </th>
+            <td width="792" rowspan="2" valign=top align="justify">
+                <font color=black>
 
-<?php
+                    <?php
 
 $mulai=$_POST['mulai'];
 $masa=$_POST['masa'];
@@ -281,7 +298,7 @@ print("alfaz_total=$alfaz_total<br>");
 print("alfa_total=$alfa_total<br><br>");
 ?>
 
-<?php
+                    <?php
 
 //Jumlah barang yang harus diproduksi
 $Zcari=($alfa_satu*$z1+$alfa_dua*$z2+$alfa_tiga*$z3+$alfa_empat*$z4+$alfa_lima*$z5+$alfa_enam*$z6+$alfa_tujuh*$z7+$alfa_delapan*$z8+$alfa_sembilan*$z9 )/($alfa_satu+$alfa_dua+$alfa_tiga+ $alfa_empat+$alfa_lima+$alfa_enam+$alfa_tujuh+$alfa_delapan+$alfa_sembilan);
@@ -292,15 +309,17 @@ oleh PT TOP 100 sebanyak: <b>$Zcari</b> biji<br><br>"); ?>
 
 
 
-</font></td>
+                </font>
+            </td>
 
-</tr>
-<tr>
-<th valign="top"> </th>
-</tr>
-</table>
-<?php
+        </tr>
+        <tr>
+            <th valign="top"> </th>
+        </tr>
+    </table>
+    <?php
 }
 ?>
 </body>
+
 </html>
