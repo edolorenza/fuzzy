@@ -37,7 +37,7 @@ include ("header.php");
 
 <tr><td	colspan="3"><font	color=black><b>Periode</b></font></td>
 </tr>
-<tr><td> <font color="black"><b>Data mulai hari ke </b></font></td><td><input name="mulai" type="text"></td></tr>
+<tr><td> <font color="black"><b>Data mulai bulan ke </b></font></td><td><input name="mulai" type="text"></td></tr>
 
 <tr><td> <font color="black"><b>Masa produksi</b></font> </td><td><input name="masa" type="text"></td><td><font color=red><b>hari </b></font></td></tr>
 <tr><td colspan="2"><font color=black><b>Data Saat ini</b></font> </td></tr>
