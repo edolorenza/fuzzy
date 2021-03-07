@@ -1,0 +1,28 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-custom2 {
+  background-color: #5ca6fc;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-custom2:hover {
+  background-color: #4e89ce;
+}
+
+.content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* footer */
+.footer-content {
+  margin-top: 280px;
+  background-color: #e9e8e8;
+}
+
+.footer-content P {
+  color: #000000;
+}
